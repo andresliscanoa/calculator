@@ -18,12 +18,12 @@
     </v-app-bar>
     <v-main>
       <v-container>
-        <calculator/>
+        <calculator class="pt-12"/>
       </v-container>
     </v-main>
     <v-footer absolute app>
       <v-spacer/>
-      <span class="text-button"><strong>andresliscanoa</strong></span>
+      <span class="text-button"><strong>&copy;2020</strong></span>
     </v-footer>
   </v-app>
 </template>

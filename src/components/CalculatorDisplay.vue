@@ -4,18 +4,11 @@
         height="8rem"
         max-height="8rem"
         two-line
+        width="25rem"
     >
-      Aqui se imprimen los datos
-      Que se van sacando con la
+      Aqui se imprimen los datos <br>
+      Que se van sacando con la <br>
       calculadora
-      <template v-slot:actions>
-        <v-btn
-            color="red accent-4"
-            icon
-        >
-          <v-icon>mdi-delete</v-icon>
-        </v-btn>
-      </template>
     </v-banner>
   </v-layout>
 </template>
