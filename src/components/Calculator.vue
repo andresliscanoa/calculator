@@ -1,7 +1,7 @@
 <template>
   <v-layout justify-center row wrap>
     <v-flex md4 sm9 xs12>
-      <v-card dark elevation="10" flat>
+      <v-card color="indigo darken-4" dark elevation="10" flat>
         <v-card-title>
           <calculator-display/>
           <calculator-input/>
