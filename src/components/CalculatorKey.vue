@@ -22,7 +22,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters( [ 'getString', 'getOperator' ] ),
+    ...mapGetters( [ 'getString', 'getOperator', 'getMemory' ] ),
     val() {
       return this.getString
     },
@@ -31,7 +31,7 @@ export default {
     }
   },
   methods : {
-    ...mapMutations( [ 'setString', 'setOperator', 'setResult', 'eraseString', 'eraseLogs' ] ),
+    ...mapMutations( [ 'setString', 'setOperator', 'setResult', 'eraseString', 'eraseLogs', 'memoryAdd', 'memorySubtract', 'memoryErase' ] ),
     ...mapActions( [ 'calculate' ] ),
     addValue( input ) {
       if ( input === '0' || input === '1' || input === '2' || input === '3' || input === '4' || input === '5' || input === '6' || input === '7' || input === '8' || input === '9' ) {
@@ -57,6 +57,16 @@ export default {
       }
       if ( input === 'MC' ) {
         this.eraseLogs()
+        this.memoryErase()
+      }
+      if ( input === 'M+' ) {
+        this.memoryAdd( parseInt( this.val ) )
+      }
+      if ( input === 'M-' ) {
+        this.memorySubtract( parseInt( this.val ) )
+      }
+      if ( input === 'MR' ) {
+        this.setString( this.getMemory )
       }
     }
   }

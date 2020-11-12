@@ -13,14 +13,16 @@ export default new Vuex.Store({
       log     : {
           string: '',
           result: ''
-      }
+      },
+      memory  : 0
   },
     getters  : {
         getString  : state => state.string,
         getOperator: state => state.operator,
         getValues  : state => state.values,
         getResult  : state => state.result,
-        getLogs    : state => state.logs
+        getLogs    : state => state.logs,
+        getMemory  : state => state.memory
     },
     mutations: {
         setString( state, string ) { state.string += string },
@@ -31,7 +33,10 @@ export default new Vuex.Store({
         setLogs( state, log ) { state.logs.unshift( log ) },
         eraseLogs( state ) { state.logs = [] },
         setLog( state, object ) { Object.assign( state.log, object ) },
-        eraseLog( state ) { state.log = {} }
+        eraseLog( state ) { state.log = {} },
+        memoryAdd( state, value ) { state.memory += value },
+        memorySubtract( state, value ) { state.memory -= value },
+        memoryErase( state ) { state.memory = 0 }
     },
   actions    : {
       calculate( { commit, state }, payload ) {
